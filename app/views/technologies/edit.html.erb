@@ -1,0 +1,24 @@
+<h6>
+  Add info about <span class="text-muted"><%= @technology.title %></span>
+</h6>
+
+<div class="border bg-light rounded p-5 mt-5">
+  <%= form_for :technology, url: technology_path(@technology), method: :put do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control mb-3' %>
+
+    <%= f.label :purpose %>
+    <%= f.text_field :purpose, class: 'form-control mb-3' %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control mb-3' %>
+
+    <%= f.label :doc %>
+    <%= f.text_area :doc, class: 'form-control mb-3' %>
+
+    <%= f.submit 'Edit technology info', class: 'btn btn-primary btn-sm mt-2' %>
+    <%= link_to 'Back to technologies', technologies_path, class: 'btn btn-secondary btn-sm mt-2' %>
+
+  <% end %>
+</div>

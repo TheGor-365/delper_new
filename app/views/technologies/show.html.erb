@@ -1,0 +1,56 @@
+<h1>
+  <%= @technology.title %>
+</h1>
+
+<div class="border rounded p-5 mt-5 mb-3">
+  <small class="text-muted">
+    Purpose
+  </small>
+
+  <div class="bg-light rounded p-3 mb-2 mt-2">
+    <small>
+      <%= @technology.purpose %>
+    </small>
+  </div>
+
+  <small class="text-muted">
+    Description
+  </small>
+
+  <div class="bg-light rounded p-3 mb-2 mt-2">
+    <p>
+      <%= @technology.description %>
+    </p>
+  </div>
+
+  <small class="text-muted">
+    Documentation
+  </small>
+
+  <div class="bg-light rounded p-3 mb-2 mt-2">
+    <h6 class="text-muted">
+      <%= @technology.doc %>
+    </h6>
+  </div>
+  <%= link_to 'Back to technologies', technologies_path, class: 'btn btn-secondary btn-sm mt-2' %>
+</div>
+
+
+
+<h6 class="mt-5">
+  Add some lesson for <span class="text-muted"><%= @technology.title %></span>
+</h6>
+
+<div class="border rounded p-5 mt-5 bg-light">
+  <%= form_for ([@technology, @technology.lessons.build]) do |f| %>
+
+    <%= f.label :author %>
+    <%= f.text_field :author, class: 'form-control mb-3' %>
+
+    <%= f.label :body %>
+    <%= f.text_field :body, class: 'form-control mb-3' %>
+
+    <%= f.submit class: 'btn btn-primary btn-sm mt-2' %>
+
+  <% end %>
+</div>

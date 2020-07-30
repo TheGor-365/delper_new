@@ -1,0 +1,30 @@
+<h1 class="mb-5">
+  All lessons
+</h1>
+
+
+<% @technologies.each do |technology| %>
+  <h6>
+    <%= technology.title %>
+  </h6>
+  <div class="border rounded p-3 mb-5 bg-light">
+
+    <% technology.lessons.each do |lesson|%>
+      <small class="text-muted">
+        Author: <%= lesson.author %>
+      </small><br>
+      <small class="text-muted">
+        Lesson id: #<%= lesson.id %>
+      </small>
+      <div class="border rounded p-3 mt-3 mb-3 bg-white">
+        <p>
+          <%= lesson.body %>
+        </p>
+      </div>
+      <%= link_to 'Show', technology_lesson_path(technology, lesson), class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Delete', technology_lesson_path(technology, lesson), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Edit', edit_technology_lesson_path(technology, lesson), method: :put, class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Create', new_technology_lesson_path(technology, lesson), class: 'text-decoration-none mr-3' %>
+    <% end %>
+    </div>
+<% end %>

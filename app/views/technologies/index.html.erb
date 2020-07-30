@@ -1,0 +1,94 @@
+<h3>
+  Technologies
+</h3>
+
+<% @technologies.each do |technology| %>
+  <% technology.lessons.each do |lesson| %>
+    <div class="border rounded bg-light p-3 mt-5 mb-5">
+
+      <div class="list-group">
+        <h6>
+          <%= technology.title %><hr>
+        </h6>
+
+        <ul class="list-group">
+          <a href="<%=  %>" class="list-group-item list-group-item-action col-md-6">
+            <li class="d-flex justify-content-between align-items-center">
+              <small><%= technology.title %> questions</small>
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+          </a>
+          <a href="<%= technology_lessons_path(technology) %>" class="list-group-item list-group-item-action col-md-6">
+            <li class="d-flex justify-content-between align-items-center">
+              <small><%= technology.title %> lessons</small>
+              <span class="badge badge-primary badge-pill"><%= technology.lessons.count %></span>
+            </li>
+          </a>
+          <a href="<%=  %>" class="list-group-item list-group-item-action col-md-6">
+            <li class="d-flex justify-content-between align-items-center">
+              <small><%= technology.title %> projects</small>
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+          </a>
+        </ul>
+      </div>
+
+      <div class="container pl-0 mt-3 mb-3">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#<%= technology.title %>">
+          About <%= technology.title %>
+        </button>
+
+        <%= link_to 'Edit', edit_technology_path(technology), class: 'btn btn-outline-primary' %>
+        <%= link_to 'Delete', technology_path(technology), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-primary' %>
+        <%= link_to 'Show', technology_path(technology), class: 'btn btn-outline-primary' %>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="<%= technology.title %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><%= technology.title %></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <small class="text-muted">
+                Purpose:
+              </small>
+              <p>
+                <%= technology.purpose %>
+              </p>
+              <hr>
+              <small class="text-muted">
+                Description:
+              </small>
+              <p>
+                <%= technology.description %>
+              </p>
+              <hr>
+              <small class="text-muted">
+                Doc:
+              </small>
+              <div class="border rounded p-2">
+                <p>
+                  <%= technology.doc %>
+                </p>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= link_to 'Go to', technology_path(technology), class: 'btn btn-primary' %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
