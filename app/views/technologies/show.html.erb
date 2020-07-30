@@ -45,7 +45,7 @@
   <%= form_for ([@technology, @technology.lessons.build]) do |f| %>
 
     <%= f.label :author %>
-    <%= f.text_field :author, class: 'form-control mb-3' %>
+    <%= f.text_field :author, required: true, class: 'form-control mb-3', value: current_user.try(:username) %>
 
     <%= f.label :body %>
     <%= f.text_field :body, class: 'form-control mb-3' %>

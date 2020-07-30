@@ -3,21 +3,23 @@
 </h1>
 
 <div class="border bg-light rounded p-5 mt-5">
-  <%= form_for :technology, url: technologies_path do |f| %>
+  <% if user_signed_in? %>
+    <%= form_for :technology, url: technologies_path do |f| %>
 
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control mb-3', autofocus: true %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control mb-3 disable', autofocus: true %>
 
-    <%= f.label :purpose %>
-    <%= f.text_field :purpose, class: 'form-control mb-3' %>
+      <%= f.label :purpose %>
+      <%= f.text_field :purpose, class: 'form-control mb-3' %>
 
-    <%= f.label :description %>
-    <%= f.text_area :description, rows: '6', class: 'form-control mb-3' %>
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: '6', class: 'form-control mb-3' %>
 
-    <%= f.label :doc %>
-    <%= f.text_area :doc, class: 'form-control mb-3' %>
+      <%= f.label :doc %>
+      <%= f.text_area :doc, class: 'form-control mb-3' %>
 
-    <%= f.submit class: 'btn btn-primary btn-sm mt-2' %>
+      <%= f.submit class: 'btn btn-primary btn-sm mt-2' %>
 
+    <% end %>
   <% end %>
 </div>

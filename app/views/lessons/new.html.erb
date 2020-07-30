@@ -3,15 +3,19 @@
 </h6>
 
 <div class="border bg-light rounded p-5 mt-5">
-  <%= form_for ([@technology, @technology.lessons.build]) do |f| %>
+  <% if user_signed_in? %>
+    <%= form_for ([@technology, @technology.lessons.build]) do |f| %>
 
-    <%= f.label :author %>
-    <%= f.text_field :author, class: 'form-control mb-3' %>
 
-    <%= f.label :body %>
-    <%= f.text_field :body, class: 'form-control mb-3' %>
+        <%= f.label :author %>
+        <%= f.text_field :author, required: true, class: 'form-control mb-3', value: current_user.try(:username) %>
 
-    <%= f.submit class: 'btn btn-primary btn-sm mt-2' %>
-    <%= link_to "Back to lessons", technology_lessons_path(@technology), class: 'btn btn-secondary btn-sm mt-2' %>
+
+      <%= f.label :body %>
+      <%= f.text_field :body, class: 'form-control mb-3' %>
+
+      <%= f.submit class: 'btn btn-primary btn-sm mt-2' %>
+      <%= link_to "Back to lessons", technology_lessons_path(@technology), class: 'btn btn-secondary btn-sm mt-2' %>
+    <% end %>
   <% end %>
 </div>

@@ -5,8 +5,10 @@
 <div class="border bg-light rounded p-5 mt-5">
   <%= form_for :lesson, url: technology_lesson_path(@technology, @lesson), method: :put do |f| %>
 
-    <%= f.label :author %>
-    <%= f.text_field :author, class: 'form-control mb-3' %>
+    <fieldset>
+      <%= f.label :author %>
+      <%= f.text_field :author, required: true, class: 'form-control mb-3', value: current_user.try(:username) %>
+    </fieldset>
 
     <%= f.label :body %>
     <%= f.text_field :body, class: 'form-control mb-3' %>
