@@ -1,0 +1,38 @@
+<h6>
+  <span class="text-muted"><%= @technology.title %></span> questions
+</h6>
+<% @questions.each do |question| %>
+
+  <small class="text-muted">
+    Question id: #<%= question.id %>
+  </small><br>
+
+  <div class="border rounded p-3 mt-3 mb-5">
+
+    <small>
+      <span class="text-muted">Question:</span>
+    </small>
+
+    <p>
+      <%= question.question %>
+    </p>
+
+    <div class="p-3 bg-light rounded mt-3 mb-3">
+
+      <div class="p-3 bg-white mt-3 mb-3 ml-1 rounded">
+        <p>
+          <%= question.answer %>
+        </p>
+      </div>
+    </div>
+    <div class="p-3">
+
+      <%= link_to 'Show', technology_question_path(@technology, question), class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Delete', technology_question_path(@technology, question), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Edit', edit_technology_question_path(@technology, question), class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Create', new_technology_question_path, class: 'text-decoration-none mr-3' %>
+
+    </div>
+
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+
+<div>
+  <b><%= @technology.title %> <span class="text-muted">question #<%= @question.id %></span></b>
+</div>
+
+<div class="border bg-light rounded p-3 mt-3 mb-5">
+
+  <small class="text-muted">
+    Question
+  </small>
+  <div class="border bg-white rounded p-3 mb-2">
+    <small>
+      <%= @question.question %>
+    </small>
+  </div>
+
+  <small class="text-muted">
+    Answer
+  </small>
+  <div class="border bg-white rounded p-3 mb-2">
+    <p>
+      <%= @question.answer %>
+    </p>
+  </div>
+
+  <%= link_to "Back to lessons", technology_questions_path(@technology), class: 'btn btn-secondary btn-sm mt-2' %>
+</div>
