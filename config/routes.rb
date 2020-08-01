@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   resource :contacts, only: [:new, :create], path_names: { :new => '' }
   resources :s_lessons
+  resources :s_questions
+  resources :s_projects
 
   devise_for :users
   get 'home/index'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   # get 'contacts' => 'contacts#new'
   resources :technologies do
     resources :lessons
+    resources :questions
+    resources :projects
   end
   # https://guides.rubyonrails.org/routing.html
 end

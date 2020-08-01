@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_141331) do
+ActiveRecord::Schema.define(version: 2020_07_30_133817) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "email"
@@ -26,6 +26,24 @@ ActiveRecord::Schema.define(version: 2020_07_29_141331) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["technology_id"], name: "index_lessons_on_technology_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "technology_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["technology_id"], name: "index_projects_on_technology_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "question"
+    t.text "answer"
+    t.integer "technology_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["technology_id"], name: "index_questions_on_technology_id"
   end
 
   create_table "technologies", force: :cascade do |t|
@@ -57,4 +75,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_141331) do
   end
 
   add_foreign_key "lessons", "technologies"
+  add_foreign_key "projects", "technologies"
+  add_foreign_key "questions", "technologies"
 end
