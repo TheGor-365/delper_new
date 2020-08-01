@@ -3,14 +3,11 @@
 </h6>
 <% @lessons.each do |lesson| %>
 
-  <div class="border rounded p-3 mt-5">
-    <small class="text-muted">
-      Lesson id: #<%= lesson.id %>
-    </small><br>
+  <small class="text-muted">
+    Lesson: <%= lesson.title %>
+  </small>
 
-    <small class="text-muted">
-      Author: <%= lesson.author %>
-    </small>
+  <div class="border rounded p-3 mt-5">
 
     <div class="p-3 bg-light rounded mt-5 mb-5">
 

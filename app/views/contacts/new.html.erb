@@ -16,10 +16,10 @@
     <% end %>
 
     <%= f.label :email %>
-    <%= f.text_field :email, autofocus: true, class: 'form-control mb-3' %>
+    <%= f.text_field :email, value: current_user.email, class: 'form-control mb-3' %>
 
     <%= f.label :message %>
-    <%= f.text_area :message, rows: '6', class: 'form-control mb-3' %>
+    <%= f.text_area :message, rows: '6', autofocus: true, class: 'form-control mb-3' %>
 
     <%= f.submit 'Send message', class: 'btn btn-primary btn-sm mt-2' %>
 

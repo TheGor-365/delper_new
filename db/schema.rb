@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_30_133817) do
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "author"
+    t.string "title"
     t.text "body"
     t.integer "technology_id", null: false
     t.datetime "created_at", precision: 6, null: false
