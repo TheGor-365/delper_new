@@ -2,7 +2,7 @@
   Add new question for <span class="text-muted"><%= @technology.title %></span>
 </h6>
 
-<div class="border bg-light rounded p-5 mt-5">
+<div class="shadow-lg mt-5 mb-5 p-5">
   <% if user_signed_in? %>
     <%= form_for ([@technology, @technology.questions.build]) do |f| %>
 

@@ -7,22 +7,23 @@
     Lesson: <%= lesson.title %>
   </small>
 
-  <div class="border rounded p-3 mt-5">
+  <div class="shadow-lg mt-5 mb-5 p-5">
+    <small class="text-muted">
+      Lesson-id: #<%= lesson.id %>
+    </small>
 
-    <div class="p-3 bg-light rounded mt-5 mb-5">
-
-      <div class="p-3 bg-white mt-5 ml-1 rounded">
-        <p>
-          <%= lesson.body %>
-        </p>
-      </div>
-
-      <hr>
-      <%= link_to 'Show', technology_lesson_path(@technology, lesson), class: 'text-decoration-none mr-3' %>
-      <%= link_to 'Delete', technology_lesson_path(@technology, lesson), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
-      <%= link_to 'Edit', edit_technology_lesson_path(@technology, lesson), class: 'text-decoration-none mr-3' %>
-      <%= link_to 'Create', new_technology_lesson_path, class: 'text-decoration-none mr-3' %>
-      <hr>
+    <div class="p-3 bg-light mt-5 mb-5 ml-1">
+      <p>
+        <%= lesson.body %>
+      </p>
     </div>
+
+    <hr>
+    <%= link_to 'Show', technology_lesson_path(@technology, lesson), class: 'text-decoration-none mr-3' %>
+    <%= link_to 'Delete', technology_lesson_path(@technology, lesson), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
+    <%= link_to 'Edit', edit_technology_lesson_path(@technology, lesson), class: 'text-decoration-none mr-3' %>
+    <%= link_to 'Create', new_technology_lesson_path, class: 'text-decoration-none mr-3' %>
+    <hr>
   </div>
+
 <% end %>

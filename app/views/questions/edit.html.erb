@@ -2,7 +2,7 @@
   <b>Edit <span class="text-muted">question #<%= @question.id %></span> <%= @technology.title %></b>
 </h6>
 
-<div class="border bg-light rounded p-5 mt-5">
+<div class="shadow-lg mt-5 mb-5 p-5">
   <%= form_for :question, url: technology_question_path(@technology, @question), method: :put do |f| %>
 
     <fieldset>

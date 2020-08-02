@@ -7,24 +7,28 @@
     Question id: #<%= question.id %>
   </small><br>
 
-  <div class="border rounded p-3 mt-3 mb-5">
+  <div class="shadow-lg mt-5 mb-5 p-5">
 
     <small>
       <span class="text-muted">Question:</span>
     </small>
 
-    <p>
-      <%= question.question %>
-    </p>
-
-    <div class="p-3 bg-light rounded mt-3 mb-3">
-
-      <div class="p-3 bg-white mt-3 mb-3 ml-1 rounded">
-        <p>
-          <%= question.answer %>
-        </p>
-      </div>
+    <div class="p-3 bg-light mt-3 mb-3 ml-1">
+      <p>
+        <%= question.question %>
+      </p>
     </div>
+
+    <small class="text-muted">
+      Snippet:
+    </small><br>
+
+    <div class="p-3 bg-light mt-3 mb-3 ml-1">
+      <p>
+        <%= question.answer %>
+      </p>
+    </div>
+
     <div class="p-3">
 
       <%= link_to 'Show', technology_question_path(@technology, question), class: 'text-decoration-none mr-3' %>

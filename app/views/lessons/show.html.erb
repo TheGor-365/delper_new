@@ -3,12 +3,13 @@
   <b><%= @technology.title %> <span class="text-muted">lesson #<%= @lesson.id %></span></b>
 </div>
 
-<div class="border bg-light rounded p-3 mt-3 mb-5">
+<div class="shadow-lg mt-5 mb-5 p-5">
 
   <small class="text-muted">
     Author
   </small>
-  <div class="border bg-white rounded p-3 mb-2">
+
+  <div class="bg-light rounded p-3 mb-2">
     <small>
       <%= @lesson.title %>
     </small>
@@ -17,7 +18,8 @@
   <small class="text-muted">
     Body
   </small>
-  <div class="border bg-white rounded p-3 mb-2">
+
+  <div class="bg-light p-3 mb-2">
     <p>
       <%= @lesson.body %>
     </p>

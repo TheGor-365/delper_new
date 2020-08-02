@@ -2,7 +2,7 @@
   <%= @technology.title %>
 </h1>
 
-<div class="border rounded p-5 mt-5 mb-3">
+<div class="shadow-lg mt-5 mb-5 p-5">
   <small class="text-muted">
     Purpose
   </small>
@@ -41,7 +41,7 @@
   Add some lesson for <span class="text-muted"><%= @technology.title %></span>
 </h6>
 
-<div class="border rounded p-5 mt-4 bg-light">
+<div class="shadow-lg mt-5 mb-5 p-5">
   <%= form_for ([@technology, @technology.lessons.build]) do |f| %>
 
     <%= f.label :title %>

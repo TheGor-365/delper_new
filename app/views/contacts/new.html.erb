@@ -2,21 +2,30 @@
   Contact us
 </h1>
 
-<div class="border bg-light rounded p-5 mt-5 col-md-8">
+<div class="shadow-lg mt-5 mb-5 p-5">
   <%= form_for :contact, url: contacts_path do |f| %>
 
     <% if @contact && @contact.errors.any? %>
-      <ul>
+      <ul class="list-group">
         <% @contact.errors.full_messages.each do |msg| %>
-          <li>
+          <li class="list-group-item list-group-item-danger mb-2">
             <%= msg %>
           </li>
         <% end %>
       </ul>
     <% end %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email, value: current_user.email, class: 'form-control mb-3' %>
+    <% if user_signed_in? %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, value: current_user.email, class: 'form-control mb-3' %>
+
+    <% else %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control mb-3' %>
+
+    <% end %>
 
     <%= f.label :message %>
     <%= f.text_area :message, rows: '6', autofocus: true, class: 'form-control mb-3' %>
