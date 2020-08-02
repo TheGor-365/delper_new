@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_08_02_155447) do
 
   create_table "questions", force: :cascade do |t|
     t.text "question"
-    t.text "answer"
+    t.text "snippet"
     t.integer "technology_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
