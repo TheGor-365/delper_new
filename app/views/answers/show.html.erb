@@ -1,0 +1,60 @@
+
+<div>
+  <b><%= @technology.title %></b> <span>question #<%= @question.id %></span> |
+  <b><span class="text-muted">answer #<%= @question.answers.find(params[:id]).id %></span></b>
+</div>
+
+<div class="shadow-lg mt-5 mb-5 p-5">
+
+  <small class="text-muted">
+    Question
+  </small>
+  <div class="border bg-light p-3 mb-2">
+    <small>
+      <%= @question.question %>
+    </small>
+  </div>
+
+  <small class="text-muted">
+    Snippet
+  </small>
+  <div class="border bg-light p-3 mb-2">
+    <p>
+      <%= @question.snippet %>
+    </p>
+  </div>
+
+  <%= link_to "Back to questions", technology_questions_path(@technology), class: 'btn btn-secondary btn-sm mt-2' %>
+
+  <div class="shadow-lg mt-5 mb-5 p-5">
+
+    <small class="text-muted">
+      Answer
+    </small>
+    <div class="border bg-light p-3 mb-2">
+      <small>
+        <%= @question.answers.find(params[:id]).shortcut %>
+      </small>
+    </div>
+
+    <small class="text-muted">
+      Snippet
+    </small>
+    <div class="border bg-light p-3 mb-2">
+      <p>
+        <%= @question.answers.find(params[:id]).snippet %>
+      </p>
+    </div>
+
+    <small class="text-muted">
+      Explain
+    </small>
+    <div class="border bg-light p-3 mb-2">
+      <p>
+        <%= @question.answers.find(params[:id]).explain %>
+      </p>
+    </div>
+
+    <%= link_to "Back to answers", technology_answers_path(@technology), class: 'btn btn-secondary btn-sm mt-2' %>
+  </div>
+</div>

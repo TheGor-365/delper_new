@@ -1,0 +1,2 @@
+module SAnswersHelper
+end

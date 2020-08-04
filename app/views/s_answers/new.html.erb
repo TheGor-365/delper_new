@@ -1,0 +1,21 @@
+
+<div class="shadow-lg mt-5 mb-5 p-5">
+  <div class="dropdown">
+    <a class="text-muted dropdown-toggle" href="<%=  %>" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="text-muted text-decoration-none">
+        Add new answer <b>for</b>
+      </span>
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <% @technologies.each do |technology| %>
+        <% technology.questions.each do |question| %>
+          <a class="dropdown-item" href="<%= new_technology_answer_path(technology) %>">
+            <small><%= technology.title %></small><br>
+            <small class="text-muted"><%= question.question %></small>
+          </a>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<h6>
+  <span class="text-muted"><%= @technology.title %></span> answers for
+</h6>
+<% @questions.each do |question| %>
+
+  <small class="text-muted">
+    Question id: #<%= question.id %>
+  </small><br>
+
+  <div class="shadow-lg mt-5 mb-5 p-5">
+
+    <small>
+      <span class="text-muted">Question:</span>
+    </small>
+
+    <div class="p-3 bg-light mt-3 mb-3 ml-1">
+      <p>
+        <%= question.question %>
+      </p>
+    </div>
+
+    <small class="text-muted">
+      Snippet:
+    </small><br>
+
+    <div class="p-3 bg-light mt-3 mb-3 ml-1">
+      <p>
+        <%= question.snippet %>
+      </p>
+    </div>
+
+    <div class="p-3">
+
+      <%= link_to 'Show', technology_question_path(@technology, question), class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Delete', technology_question_path(@technology, question), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Edit', edit_technology_question_path(@technology, question), class: 'text-decoration-none mr-3' %>
+      <%= link_to 'Create', new_technology_question_path, class: 'text-decoration-none mr-3' %>
+
+    </div>
+
+    <% question.answers.each do |answer| %>
+
+      <div class="shadow-lg mt-5 mb-5 p-5">
+
+        <small>
+          <span class="text-muted"><span class="text-muted"><b>Answer</b></span> <b>#<%= answer.id %></b> for <p><%= question.question %></p></span>
+        </small><br>
+
+
+
+        <div class="p-3 bg-light mt-3 mb-3 ml-1">
+          <p>
+            <%= answer.shortcut %>
+          </p>
+        </div>
+
+        <small class="text-muted">
+          Snippet:
+        </small><br>
+
+        <div class="p-3 bg-light mt-3 mb-3 ml-1">
+          <p>
+            <%= answer.snippet %>
+          </p>
+        </div>
+
+        <small class="text-muted">
+          Explain:
+        </small><br>
+
+        <div class="p-3 bg-light mt-3 mb-3 ml-1">
+          <p>
+            <%= answer.explain %>
+          </p>
+        </div>
+
+        <div class="p-3">
+
+          <%= link_to 'Show', technology_answer_path(@technology, answer), class: 'text-decoration-none mr-3' %>
+          <%= link_to 'Delete', technology_answer_path(@technology, answer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
+          <%= link_to 'Edit', edit_technology_answer_path(@technology, answer), class: 'text-decoration-none mr-3' %>
+          <%= link_to 'Create', new_technology_answer_path, class: 'text-decoration-none mr-3' %>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

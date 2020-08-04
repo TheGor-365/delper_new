@@ -97,6 +97,24 @@
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Answers
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="<%= s_answers_path %>">All answers</a>
+                <div class="dropdown-divider"></div>
+                <% @technologies.each do |technology| %>
+                  <% technology.questions.each do |technology_question| %>
+                    <% technology_question.answers.each do |technology_answer| %>
+                      <a class="dropdown-item" href="<%= technology_answers_path(technology) %>"><%= technology.title %> answers</a>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <a class="dropdown-item" href="#">Another action</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Projects
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -145,6 +163,7 @@
                   <a class="dropdown-item" href="<%= new_technology_path %>"><small class="text-muted">Technology</small></a>
                   <a class="dropdown-item" href="<%= new_s_lesson_path %>"><small class="text-muted">Lesson</small></a>
                   <a class="dropdown-item" href="<%= new_s_question_path %>"><small class="text-muted">Qestion</small></a>
+                  <a class="dropdown-item" href="<%= new_s_answer_path %>"><small class="text-muted">Answer</small></a>
                   <a class="dropdown-item" href="<%= new_s_project_path %>"><small class="text-muted">Project</small></a>
                 </div>
               </li>
