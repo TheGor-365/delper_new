@@ -1,3 +1,5 @@
+
+
 <h6 class="mt-5">
   Add new answer for
 </h6><br>
@@ -16,25 +18,25 @@
     <%= @question.snippet %>
   </p>
 
-</div>
-
-<div class="shadow-lg mt-5 mb-5 p-5">
-  <% if user_signed_in? %>
-    <%= form_for ([@technology, @technology.questions.find(1).answers.build]) do |f| %>
 
 
-      <%= f.label :shortcut %>
-      <%= f.text_area :shortcut, required: true, class: 'form-control mb-3' %>
+  <div class="shadow-lg mt-5 mb-5 p-5">
+    <% if user_signed_in? %>
+      <%= form_for ([@technology, @question, @question.answers.build]) do |f| %>
+
+        <%= f.label :shortcut %>
+        <%= f.text_area :shortcut, required: true, class: 'form-control mb-3' %>
 
 
-      <%= f.label :snippet %>
-      <%= f.text_area :snippet, class: 'form-control mb-3' %>
+        <%= f.label :snippet %>
+        <%= f.text_area :snippet, class: 'form-control mb-3' %>
 
-      <%= f.label :explain %>
-      <%= f.text_area :explain, class: 'form-control mb-3' %>
+        <%= f.label :explain %>
+        <%= f.text_area :explain, class: 'form-control mb-3' %>
 
-      <%= f.submit class: 'btn btn-primary btn-sm mt-2' %>
-      <%= link_to "Back to lessons", technology_answers_path(@technology), class: 'btn btn-secondary btn-sm mt-2' %>
+        <%= f.submit class: 'btn btn-primary btn-sm mt-2' %>
+        <%= link_to "Back to answers", technology_question_answers_path(@technology, @question), class: 'btn btn-secondary btn-sm mt-2' %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

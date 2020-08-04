@@ -3,6 +3,7 @@ class TechnologiesController < ApplicationController
 
   def index
     @technologies = Technology.all
+
   end
 
   def show
@@ -13,7 +14,7 @@ class TechnologiesController < ApplicationController
   def new
     @technologies = Technology.all
     @author = current_user.username
-        
+
   end
 
   def create

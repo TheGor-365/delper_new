@@ -5,7 +5,6 @@ class SAnswersController < ApplicationController
 
   def new
     @technologies = Technology.all
-
   end
 
   private

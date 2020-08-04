@@ -105,7 +105,7 @@
                 <% @technologies.each do |technology| %>
                   <% technology.questions.each do |technology_question| %>
                     <% technology_question.answers.each do |technology_answer| %>
-                      <a class="dropdown-item" href="<%= technology_answers_path(technology) %>"><%= technology.title %> answers</a>
+                      <a class="dropdown-item" href="<%= technology_question_answers_path(technology, technology_question) %>"><%= technology.title %> answers</a>
                     <% end %>
                   <% end %>
                 <% end %>

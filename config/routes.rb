@@ -15,9 +15,11 @@ Rails.application.routes.draw do
   # get 'contacts' => 'contacts#new'
   resources :technologies do
     resources :lessons
-    resources :questions
-    resources :answers
     resources :projects
+
+    resources :questions do
+      resources :answers
+    end
   end
   # https://guides.rubyonrails.org/routing.html
 end

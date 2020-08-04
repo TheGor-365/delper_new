@@ -10,7 +10,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
       <% @technologies.each do |technology| %>
         <% technology.questions.each do |question| %>
-          <a class="dropdown-item" href="<%= new_technology_answer_path(technology) %>">
+          <a class="dropdown-item" href="<%= new_technology_question_answer_path(technology, question) %>">
             <small><%= technology.title %></small><br>
             <small class="text-muted"><%= question.question %></small>
           </a>

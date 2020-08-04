@@ -46,8 +46,6 @@
           <span class="text-muted"><span class="text-muted"><b>Answer</b></span> <b>#<%= answer.id %></b> for <p><%= question.question %></p></span>
         </small><br>
 
-
-
         <div class="p-3 bg-light mt-3 mb-3 ml-1">
           <p>
             <%= answer.shortcut %>
@@ -75,12 +73,10 @@
         </div>
 
         <div class="p-3">
-
-          <%= link_to 'Show', technology_answer_path(@technology, answer), class: 'text-decoration-none mr-3' %>
-          <%= link_to 'Delete', technology_answer_path(@technology, answer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
-          <%= link_to 'Edit', edit_technology_answer_path(@technology, answer), class: 'text-decoration-none mr-3' %>
-          <%= link_to 'Create', new_technology_answer_path, class: 'text-decoration-none mr-3' %>
-
+          <%= link_to 'Show', technology_question_answer_path(@technology, question, answer), class: 'text-decoration-none mr-3' %>
+          <%= link_to 'Delete', technology_question_answer_path(@technology, question, answer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-decoration-none mr-3' %>
+          <%= link_to 'Edit', edit_technology_question_answer_path(@technology, question, answer), class: 'text-decoration-none mr-3' %>
+          <%= link_to 'Create', new_technology_question_answer_path, class: 'text-decoration-none mr-3' %>
         </div>
       </div>
     <% end %>
