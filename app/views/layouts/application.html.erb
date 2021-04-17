@@ -139,9 +139,22 @@
                 <%= current_user.username %>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#"><small class="text-muted">My answers</small></a>
-                <a class="dropdown-item" href="#"><small class="text-muted">My lessons</small></a>
-                <a class="dropdown-item" href="#"><small class="text-muted">My projects</small></a>
+
+                <%= link_to s_questions_path, class: 'text-muted dropdown-item' do %>
+                  <small class="text-muted">My questions</small>
+                <% end %>
+
+                <%= link_to s_answers_path, class: 'text-muted dropdown-item' do %>
+                  <small class="text-muted">My answers</small>
+                <% end %>
+
+                <%= link_to s_lessons_path, class: 'text-muted dropdown-item' do %>
+                  <small class="text-muted">My lessons</small>
+                <% end %>
+
+                <%= link_to s_projects_path, class: 'text-muted dropdown-item' do %>
+                  <small class="text-muted">My projects</small>
+                <% end %>
 
                 <div class="dropdown-divider"></div>
 
