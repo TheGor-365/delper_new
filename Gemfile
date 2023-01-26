@@ -4,23 +4,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.8'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-gem 'puma', '~> 4.1'
-gem 'sass-rails', '>= 6'
-gem 'webpacker', '~> 4.0'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.7'
-gem 'bootsnap', '>= 1.4.2', require: false
-
-gem 'bootstrap', '~> 4.5.0'
+gem 'puma'
+gem 'sass-rails'
+gem 'webpacker'
+gem 'turbolinks'
+gem 'jbuilder'
+gem 'bootsnap', require: false
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'rails_admin'
 gem 'cancancan'
 gem 'pg'
-gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-facebook'
+gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -35,5 +33,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
