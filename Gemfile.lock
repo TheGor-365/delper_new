@@ -62,11 +62,11 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
-    autoprefixer-rails (10.4.7.0)
+    autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    bootsnap (1.13.0)
+    bootsnap (1.16.0)
       msgpack (~> 1.2)
     bootstrap (5.2.3)
       autoprefixer-rails (>= 9.1.0)
@@ -74,9 +74,10 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
-    cancancan (3.4.0)
-    capybara (3.35.3)
+    cancancan (3.5.0)
+    capybara (3.38.0)
       addressable
+      matrix
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
@@ -91,30 +92,25 @@ GEM
       marcel (~> 1.0.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
-    childprocess (3.0.0)
-    concurrent-ruby (1.2.0)
+    concurrent-ruby (1.2.2)
     crass (1.0.6)
-    devise (4.8.1)
+    date (3.3.3)
+    devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    digest (3.1.1)
     erubi (1.12.0)
     execjs (2.8.1)
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    haml (5.2.2)
-      temple (>= 0.8.0)
-      tilt
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
-    io-wait (0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -122,8 +118,6 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
-      railties (>= 3.2.16)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -139,47 +133,45 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0.1)
+    mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
       net-smtp
     marcel (1.0.2)
+    matrix (0.4.2)
     method_source (1.0.0)
     mini_magick (4.12.0)
     mini_mime (1.1.2)
-    minitest (5.15.0)
-    msgpack (1.6.0)
+    mini_portile2 (2.8.1)
+    minitest (5.18.0)
+    msgpack (1.6.1)
     nested_form (0.3.2)
-    net-imap (0.2.2)
-      digest
+    net-http (0.3.2)
+      uri
+    net-imap (0.3.4)
+      date
       net-protocol
-      strscan
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.1.2)
-      io-wait
+    net-protocol (0.2.1)
       timeout
-    net-smtp (0.3.0)
-      digest
+    net-smtp (0.3.3)
       net-protocol
-      timeout
     nio4r (2.5.8)
-    nokogiri (1.12.5-x86_64-linux)
+    nokogiri (1.14.2)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.4.5)
+    pg (1.4.6)
     popper_js (2.11.6)
-    public_suffix (4.0.7)
-    puma (6.0.2)
+    public_suffix (5.0.1)
+    puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.6.2)
-    rack-pjax (1.1.0)
-      nokogiri (~> 1.5)
-      rack (>= 1.1)
-    rack-proxy (0.7.6)
-      rack
+    rack (2.2.6.3)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (6.0.6.1)
@@ -202,18 +194,12 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
-    rails_admin (2.2.1)
+    rails_admin (3.1.1)
       activemodel-serializers-xml (>= 1.0)
-      builder (~> 3.1)
-      haml (>= 4.0, < 6)
-      jquery-rails (>= 3.0, < 5)
-      jquery-ui-rails (>= 5.0, < 7)
       kaminari (>= 0.14, < 2.0)
       nested_form (~> 0.3)
-      rack-pjax (>= 0.7)
-      rails (>= 5.0, < 7)
-      remotipart (~> 1.3)
-      sassc-rails (>= 1.3, < 3)
+      rails (>= 6.0, < 8)
+      turbo-rails (~> 1.0)
     railties (6.0.6.1)
       actionpack (= 6.0.6.1)
       activesupport (= 6.0.6.1)
@@ -221,11 +207,11 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (13.0.6)
-    regexp_parser (2.6.2)
-    remotipart (1.4.4)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
+    regexp_parser (2.7.0)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
+    rexml (3.2.5)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
@@ -239,10 +225,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (3.142.7)
-      childprocess (>= 0.5, < 4.0)
-      rubyzip (>= 1.2.2)
-    semantic_range (3.0.0)
+    selenium-webdriver (4.8.1)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -250,18 +236,21 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    ssrf_filter (1.0.8)
-    strscan (3.0.5)
-    temple (0.10.0)
+    ssrf_filter (1.1.1)
     thor (1.2.1)
     thread_safe (0.3.6)
-    tilt (2.0.11)
-    timeout (0.3.1)
+    tilt (2.1.0)
+    timeout (0.3.2)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.10)
+    tzinfo (1.2.11)
       thread_safe (~> 0.1)
+    uri (0.12.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -269,23 +258,20 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webdrivers (4.6.1)
+    webdrivers (5.2.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
-      selenium-webdriver (>= 3.0, < 4.0)
-    webpacker (5.4.3)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
+      selenium-webdriver (~> 4.0)
+    websocket (1.2.9)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.6)
+    zeitwerk (2.6.7)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -299,6 +285,9 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   mini_magick
+  net-http
+  net-imap
+  net-smtp
   pg
   puma
   rails (~> 6.0.3, >= 6.0.3.2)
@@ -307,12 +296,12 @@ DEPENDENCIES
   selenium-webdriver
   turbolinks
   tzinfo-data
+  uri
   web-console (>= 3.3.0)
   webdrivers
-  webpacker
 
 RUBY VERSION
-   ruby 2.5.8p224
+   ruby 2.7.0p0
 
 BUNDLED WITH
    2.2.13
