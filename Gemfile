@@ -13,11 +13,11 @@ gem 'bootsnap'
 gem 'bootstrap'
 # gem 'jquery-rails'
 # gem 'rails_admin'
-gem 'cancancan'
+# gem 'cancancan'
 gem 'pg'
 gem 'devise'
-gem 'mini_magick'
-gem 'carrierwave'
+# gem 'mini_magick'
+# gem 'carrierwave'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "net-http"
 gem "net-smtp"
